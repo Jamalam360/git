@@ -5,8 +5,8 @@ GitHub under my account, or any organizations it is in.
 
 ## Setup
 
-The project can be deployed quickly on Deno Deploy using [this link](). The
-following environment variables must be set:
+The project can be deployed quickly on Deno Deploy. The following environment
+variables must be set:
 
 - `GITHUB_USERS`: A comma-separated list of GitHub users & organisations to link
   to.
