@@ -14,10 +14,10 @@ await serve(
     async (req) => {
         let path = new URL(req.url).pathname;
 
-        if (path.startsWith("/") {
+        if (path.startsWith("/")) {
             path = path.substring(1);
         }
-        
+
         let url = "";
 
         if (cache.has(path)) {
