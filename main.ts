@@ -12,8 +12,12 @@ const cache: Map<string, { time: number; url: string }> = new Map();
 
 await serve(
     async (req) => {
-        const path = new URL(req.url).pathname;
+        let path = new URL(req.url).pathname;
 
+        if (path.startsWith("/") {
+            path = path.substring(1);
+        }
+        
         let url = "";
 
         if (cache.has(path)) {
