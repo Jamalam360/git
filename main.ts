@@ -37,7 +37,9 @@ await serve(
         }
 
         for (const user of githubUsers) {
-            const req = await fetch(`https://github.com/${user}/${path}`);
+            const req = await fetch(
+                `https://github.com/${user}${path == "" ? "" : `/${path}`}`,
+            );
 
             if (req.status == 404) continue;
 
