@@ -44,6 +44,12 @@ await serve(
             if (req.status == 404) continue;
 
             url = `https://github.com/${user}/${path}`;
+
+
+            if (url.includes("/latest")) {
+                url = url.replace("/latest", "/releasess/latest");
+            } 
+
             cache.set(path, { time: Date.now(), url });
             break;
         }
