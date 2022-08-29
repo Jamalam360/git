@@ -1,7 +1,7 @@
 {
-    "fmt": {
-        "options": {
-            "indentWidth": 4
-        }
-    }
+	"fmt": {
+		"options": {
+			"useTabs": true
+		}
+	}
 }
