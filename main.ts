@@ -37,19 +37,19 @@ await serve(
         }
 
         for (const user of githubUsers) {
+            let fetchUrl = `https://github.com/${user}/${path == "" ? "" : `/${path}`}`
+            
+            if (fetchUrl.includes("/latest")) {
+                fetchUrl = fetchUrl.replace("/latest", "/releases/latest");
+            }
+
             const req = await fetch(
-                `https://github.com/${user}${path == "" ? "" : `/${path}`}`,
+                fetchUrl,
             );
 
             if (req.status == 404) continue;
 
-            url = `https://github.com/${user}/${path}`;
-
-
-            if (url.includes("/latest")) {
-                url = url.replace("/latest", "/releasess/latest");
-            } 
-
+            url = fetchUrl;
             cache.set(path, { time: Date.now(), url });
             break;
         }
